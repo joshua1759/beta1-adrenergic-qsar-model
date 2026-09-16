@@ -10,7 +10,7 @@ The beta-1 adrenergic receptor is one of four adrenergic receptors with a purpos
 -	The model was validated using an 80/20 train/test split and 5-fold cross validation in order to test its accuracy in predicting pIC50 scores.
 
 ## Pipeline Overview
-
+```
 ChEMBL Database
 ┌───────────────────────────────────────────────────────────────────────────────────────────┐
 |- Bioactivity data for human beta-1 adrenergic receptor (CHEMBL213) was retrieved using the|     |  ChEMBL web resource client.                                                              |
@@ -45,7 +45,7 @@ pIC50 Prediction
 |- Model output predicted pIC50 values of untested data.                                          |
 |- Used to quantify binding affinity of compounds against the human beta-1 adrenergic receptor for |   practical prioritization.                                                                     |
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
-
+```
 ## Results
 
 |              Metric                         | Value |
