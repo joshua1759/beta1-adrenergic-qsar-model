@@ -12,39 +12,39 @@ The beta-1 adrenergic receptor is one of four adrenergic receptors with a purpos
 ## Pipeline Overview
 
 ChEMBL Database
--------------------------------------------------------------------------------------------------------------------------
-|- Bioactivity data for human beta-1 adrenergic receptor (CHEMBL213) was retrieved using the ChEMBL web resource client.|
--------------------------------------------------------------------------------------------------------------------------
+┌───────────────────────────────────────────────────────────────────────────────────────────┐
+|- Bioactivity data for human beta-1 adrenergic receptor (CHEMBL213) was retrieved using the|     |  ChEMBL web resource client.                                                              |
+└───────────────────────────────────────────────────────────────────────────────────────────┘
       |
       ▼
 Data Preprocessing
---------------------------------------------------------------------------------------------------------------------------------------
-|- The data acquired was filtered to binding assays only, removing compounds with missing values and IC50 ceiling values >= 10,000 nM.|
-|- IC50 values were converted to pIC50.                                                                                              | 
-|- Final data set contained 450 compounds.                                                                                           |
---------------------------------------------------------------------------------------------------------------------------------------
+┌───────────────────────────────────────────────────────────────────────────────────────────────┐
+|- The data acquired was filtered to binding assays only, removing compounds with missing values|  |  and IC50 ceiling values >= 10,000 nM.                                                        |
+|- IC50 values were converted to pIC50.                                                         |  
+|- Final data set contained 450 compounds.                                                      |  
+└───────────────────────────────────────────────────────────────────────────────────────────────┘
       |
       ▼
 Morgan Fingerprint Generation
-------------------------------------------------------------------------------------------------------------------------------
-|- SMILES strings for the filtered compounds were converted into RDKit molecule objects.                                     |
-|- Morgan fingerprints were generated using a radius of 2 and 2048 bits.                                                     |  
-|- Converted chemical structures into a fixed length of binary vectors which acted as the independent variable for the model.|
-------------------------------------------------------------------------------------------------------------------------------
+┌───────────────────────────────────────────────────────────────────────────────────────────────┐
+|- SMILES strings for the filtered compounds were converted into RDKit molecule objects.          |
+|- Morgan fingerprints were generated using a radius of 2 and 2048 bits.                         | 
+|- Converted chemical structures into a fixed length of binary vectors which acted as the        | | independent variable for the model.                                                             |
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
       |
       ▼
 Random Forest Model
--------------------------------------------------------------------------------------------------------------------------
-|- The forest consisted of 200 trees with a max depth of 7 and a seed of 123 for reproducibility.                      |
-|- The random forest model was used to learn relationships from the Morgan fingerprints to predict pIC50 binding values.|
-------------------------------------------------------------------------------------------------------------------------- 
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+|- The forest consisted of 200 trees with a max depth of 7 and a seed of 123 for reproducibility. |
+|- The random forest model was used to learn relationships from the Morgan fingerprints to predict |  pIC50 binding values.                                                                          |
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
       |
       ▼
 pIC50 Prediction
------------------------------------------------------------------------------------------------------------------------------
-|- Model output predicted pIC50 values of untested data.                                                                    |
-|- Used to quantify binding affinity of compounds against the human beta-1 adrenergic receptor for practical prioritization.|
------------------------------------------------------------------------------------------------------------------------------
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+|- Model output predicted pIC50 values of untested data.                                          |
+|- Used to quantify binding affinity of compounds against the human beta-1 adrenergic receptor for |   practical prioritization.                                                                     |
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ## Results
 
