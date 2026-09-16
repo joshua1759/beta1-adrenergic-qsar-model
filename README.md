@@ -81,7 +81,7 @@ conda install -c conda-forge rdkit
    git clone https://github.com/joshua1759/beta1-adrenergic-qsar-model.git
   ```
 2. Install requirements (See Requirements section)
-3. Open Jupyter Notebook (beta1_qsar_exploratory.ipynb
+3. Open Jupyter Notebook (beta1_qsar_exploratory.ipynb)
 4. Run the Notebook from top to bottom. (If ChEMBL is unavailable, the pipeline will automatically fall back to the locally saved dataset or the GitHub Hosted CSV.)
 
 ## References
