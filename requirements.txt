@@ -3,4 +3,4 @@ pandas
 numpy
 scikit-learn
 chembl-webresource-client
-rdkit==2024.3.5
+rdkit==2026.3.6
